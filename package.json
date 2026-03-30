@@ -1,0 +1,23 @@
+{
+  "name": "black-hole",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isinaannn/black-hole-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isinaannn/black-hole-blog/issues"
+  },
+  "homepage": "https://github.com/isinaannn/black-hole-blog#readme",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

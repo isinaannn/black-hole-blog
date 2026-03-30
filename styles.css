@@ -1,0 +1,449 @@
+:root {
+  --true-black: #000000;
+  --accretion-orange: #ff5f1f;
+  --accretion-orange-glow: rgba(255, 95, 31, 0.3);
+  --event-horizon-gold: #ffb300;
+  --photon-ring-glow: rgba(255, 255, 255, 0.15);
+  --text-main: #f0f0f0;
+  --text-muted: #a0a0a0;
+  --bg-surface: #0a0a0a;
+  --glass-bg: rgba(25, 25, 30, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--true-black);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.secondary-bg {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.center {
+  text-align: center;
+}
+
+/* === HERO SECTION === */
+.hero-sticky-wrapper {
+  height: 400vh; /* Control animation scroll distance here */
+  position: relative;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 80%, var(--true-black) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accretion-orange), var(--event-horizon-gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === BUTTONS === */
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: var(--accretion-orange);
+  color: var(--true-black);
+  box-shadow: 0 0 20px rgba(255, 95, 31, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--event-horizon-gold);
+  box-shadow: 0 0 30px rgba(255, 179, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 2px solid var(--text-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--text-main);
+  color: var(--true-black);
+  transform: translateY(-2px);
+}
+
+/* === TYPOGRAPHY & UTILS === */
+.section-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.highlight-orange {
+  color: var(--accretion-orange);
+}
+
+/* === LAYOUTS === */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.anatomy-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  text-align: center;
+}
+
+.anatomy-layout .text-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.anatomy-large {
+  max-width: 1000px !important;
+  width: 100%;
+}
+
+.text-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-content strong {
+  color: var(--event-horizon-gold);
+}
+
+.visual-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SECTION 2 SPECIFIC CARDS */
+.data-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--glass-border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, border-left-color 0.3s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-5px);
+  border-left-color: var(--event-horizon-gold);
+}
+
+.data-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.data-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* === GRID TRACT (SECTION 3) === */
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2.5rem;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accretion-orange), var(--event-horizon-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background: rgba(40, 40, 45, 0.8);
+  box-shadow: 0 20px 40px var(--accretion-orange-glow);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--glass-border);
+  filter: grayscale(0.5);
+  transition: filter 0.3s ease;
+}
+
+.card:hover .card-img {
+  filter: grayscale(0);
+}
+
+.nasa-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 40px var(--photon-ring-glow);
+  border: 1px solid var(--glass-border);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nasa-image:hover {
+  transform: scale(1.03);
+}
+
+.glow-orange {
+  box-shadow: 0 0 50px rgba(255, 95, 31, 0.3);
+}
+
+/* === MYTH BUSTING (SECTION 4) === */
+.side-by-side {
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.myth-box {
+  flex: 1;
+  background: rgba(255, 0, 0, 0.02); /* Slight red hint for myth */
+  border: 1px solid rgba(255, 95, 31, 0.2);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.myth-box:hover {
+  transform: scale(1.02);
+  border-color: var(--accretion-orange);
+}
+
+.myth-box h3 {
+  font-size: 1.8rem;
+  color: var(--event-horizon-gold);
+  margin-bottom: 1.5rem;
+}
+
+.myth-box p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #050505;
+  padding: 6rem 0 2rem;
+  text-align: center;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-content p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+}
+
+.footer-bottom {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* === ANIMATIONS & MICRO-INTERACTIONS === */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide canvas frame-to-frame transitions if necessary */
+body.loading {
+  overflow: hidden;
+}
+
+/* NASA Image integration styles complete */
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .split-layout, .anatomy-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .anatomy-layout .text-content {
+    order: 2;
+  }
+  
+  .anatomy-layout .visual-content {
+    order: 1;
+  }
+  
+  .side-by-side {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section {
+    padding: 5rem 0;
+  }
+}

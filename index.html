@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Holes: The Invisible Giants</title>
+    <meta name="description" content="Explore the cosmos: concentrated matter, invisible gravity, and the boundaries of space-time.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="hero-sticky-wrapper">
+        <header class="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content">
+                <h1 class="hero-title">More Than a Void:<br><span class="gradient-text">Understanding Black Holes.</span></h1>
+                <p class="hero-subtitle">Concentrated matter, invisible gravity, and the boundaries of space-time.</p>
+                <a href="#astro-investigates" class="btn-primary">Watch Astro-Investigates</a>
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <section id="anatomy" class="section reveal">
+            <div class="container anatomy-layout">
+                <div class="text-content">
+                    <h2 class="section-title">The Anatomy of Density</h2>
+                    <p>Despite their name, black holes aren't empty voids or "holes" in space. They are astronomical objects packed with immense amounts of matter squeezed into a tiny, almost infinitely dense point called a singularity.</p>
+                    <p>Surrounding this point is the <strong>Event Horizon</strong>. Often described as the boundary of no return, the event horizon marks the exact invisible sphere where the gravitational pull becomes so profound that nothing—not even light—can attain the escape velocity required to break free.</p>
+                </div>
+                <div class="visual-content">
+                    <img src="images/img/Black_hole's_accretion_disk.jpg" alt="Black Hole Accretion Disk visualization" class="nasa-image anatomy-large">
+                </div>
+            </div>
+        </section>
+
+        <section id="spotlight" class="section secondary-bg reveal">
+            <div class="container split-layout">
+                <div class="visual-content">
+                    <img src="images/img/Sagittarius-A-supermassive-black-hole.webp" alt="Historic Capture of Sagittarius A* by EHT" class="nasa-image glow-orange">
+                </div>
+                <div class="text-content">
+                    <h2 class="section-title">Spotlight on <span class="highlight-orange">Sagittarius A*</span></h2>
+                    <p>At the center of our Milky Way galaxy spins Sagittarius A*, a supermassive black hole around 4 million times the mass of our Sun.</p>
+                    <p>While the black hole itself is invisible, the <strong>swirling accretion disk</strong> of superheated gas and dust surrounding it glows fiercely. The extreme gravitational forces bend and warp the light from this disk, creating a distinct glowing ring that appears above and below the event horizon.</p>
+                    <div class="data-card">
+                        <h3>JWST Data Insight</h3>
+                        <p>Recent observations from the James Webb Space Telescope have revealed rapid, mysterious flickers in the hot gas flares orbiting Sagittarius A*, granting unprecedented clues into the extreme magnetic activity near the event horizon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="detection" class="section reveal">
+            <div class="container">
+                <h2 class="section-title center">The Art of Detection</h2>
+                <div class="grid layout-grid">
+                    <article class="card">
+                        <h3>Accretion Disks</h3>
+                        <p>As gas and dust spiral inward, they heat up rapidly due to intense friction, emitting powerful X-rays that telescopes can detect long before the matter crosses the event horizon.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Stellar Orbits</h3>
+                        <p>By tracking the immense speeds of stars orbiting apparently empty central regions—a feat that awarded the 2020 Nobel Prize—astronomers can calculate the invisible central mass.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Gravitational Waves</h3>
+                        <p>When two black holes collide, the immense acceleration generates ripples in the fabric of space-time, allowing observatories like LIGO to "hear" the cosmic event.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Gravitational Lensing</h3>
+                        <p>Acting as cosmic magnifying glasses, black holes distort the light from distant galaxies situated behind them, revealing the presence of hidden mass.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="myths" class="section secondary-bg reveal">
+            <div class="container">
+                <h2 class="section-title center">Myth-Busting</h2>
+                <div class="side-by-side">
+                    <div class="myth-box false">
+                        <h3>Not Wormholes</h3>
+                        <p>Despite science fiction, black holes are not intergalactic shortcuts or portals to other dimensions. Matter that falls within the event horizon is compressed into the singularity, not transported elsewhere.</p>
+                    </div>
+                    <div class="myth-box false">
+                        <h3>Not Vacuums</h3>
+                        <p>Black holes do not simply "suck" surrounding matter in like cosmic vacuum cleaners. They exert standard gravitational pull. If our Sun were replaced by a black hole of identical mass, the planets would continue orbiting identically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="astro-investigates">
+        <div class="container footer-content">
+            <h2 class="footer-title">Dive Deeper With Astro-Investigates</h2>
+            <p>Explore our exclusive video series dissecting the profound mysteries of the universe, featuring insights from leading astrophysicists.</p>
+            <a href="#" class="btn-secondary">Learn from NASA Scientists</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Black Holes: The Invisible Giants. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
